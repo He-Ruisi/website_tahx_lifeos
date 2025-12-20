@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tahx (禾兑) | Manage Assets, Not Just Expenses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              tahx: {
+                bg: '#050505',
+                card: '#121212',
+                border: '#2A2A2A',
+                accent: '#00F0FF', // Cyber Cyan
+                secondary: '#2563EB', // Klein Blue-ish
+                text: '#E5E5E5',
+                muted: '#737373'
+              },
+              panyuliang: {
+                bg: '#2E243C', // Deep Indigo/Violet
+                card: '#453655', // Muted Plum
+                border: '#5E4B70', 
+                accent: '#D4A373', // Golden Ochre
+                secondary: '#C44536', // Carmine Red
+                text: '#F2E9E4', // Canvas White
+                muted: '#A899B5'
+              },
+              pancanvas: {
+                bg: '#F2E9E4', // Rice Paper / Canvas
+                card: '#FFFFFF', // Clean White
+                border: '#E0D5C9', 
+                accent: '#C8553D', // Brick Red (Rouge)
+                secondary: '#588157', // Sage Green
+                text: '#222222', // Ink Black
+                muted: '#888888'
+              },
+              panjade: {
+                bg: '#D8E2DC', // Mist / Pale Celadon
+                card: '#F3F6F4', // Soft White
+                border: '#B8C6BF',
+                accent: '#E29578', // Terra Cotta
+                secondary: '#006D77', // Deep Teal
+                text: '#264653', // Dark Slate
+                muted: '#6C757D'
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        transition: background-color 0.5s ease;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
