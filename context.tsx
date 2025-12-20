@@ -14,15 +14,15 @@ export const translations = {
     // Bento Cards
     cardBattery: "Life Battery",
     cardEntry: "AI Entry",
-    cardEntryDesc: "\"Bought a MacBook Pro for $2400\"",
+    cardEntryDesc: "Auto-parse natural language",
     cardArch: "Architecture",
-    cardArchDesc: "Micro-kernel + Plugins",
+    cardArchDesc: "Drift DB + Plugin System",
     cardMap: "Roadmap",
-    cardMapDesc: "Future Plans",
+    cardMapDesc: "Technical Plans",
     cardPhil: "Philosophy",
     cardPhilDesc: "Life OS Concept",
-    cardBody: "Body Capital",
-    cardBodyDesc: "The Greatest Asset",
+    cardBody: "Life Radar",
+    cardBodyDesc: "5-Dimension Status",
     
     // Philosophy Section
     philTitle: "Philosophy & Design",
@@ -66,9 +66,9 @@ export const translations = {
     
     // Modals - Architecture
     archLayer1: "Layer 1: Drift Database",
-    archLayer1Desc: "Local-first SQL structure ensuring your data belongs to you. Built on SQLite with JSON extensions.",
+    archLayer1Desc: "Local-first SQL structure ensuring your data belongs to you. Built on SQLite with JSON extensions. Supports Entity/Event separation.",
     archLayer2: "Layer 2: Plugin System",
-    archLayer2Desc: "The nervous system. Connectors for Bank APIs, OCR scanners, and manual input streams.",
+    archLayer2Desc: "The nervous system. Connectors for Bank APIs, OCR scanners, and manual input streams. Intelligent mapping rules link inputs to Projects.",
     archLayer3: "Layer 3: Negative One Screen",
     archLayer3Desc: "The interface. A drag-and-drop dashboard (Bento) that acts as the operating system for your life's assets.",
     
@@ -83,7 +83,7 @@ export const translations = {
     roadmapItem4: "Negative One Screen Refine",
     roadmapItem5: "Cloud Backup (Optional)",
     roadmapItem6: "New Theme Engine",
-    roadmapItem7: "Core Database",
+    roadmapItem7: "Core Database (Drift)",
     roadmapItem8: "Basic Asset Entry",
     roadmapItem9: "Multi-language Support",
 
@@ -98,6 +98,19 @@ export const translations = {
       "Data ownership is the first step to freedom.",
       "Optimize for longevity, not instant gratification.",
       "The 'Negative One Screen' removes the friction."
+    ],
+    
+    aiExamples: [
+       "Bought a MacBook Pro M3, $2499",
+       "Taxi to Airport, -$45 #System",
+       "Trip to Yunnan, -$800 #Soul",
+       "Starbucks Latte, -$6",
+       "Salary Income, +$5000",
+       "Gym Membership, -$500 #Body",
+       "Sold Old Switch, +$150",
+       "ChatGPT Subscription, -$20",
+       "Gift for Mom, -$100 #Social",
+       "Bought 'Naval Ravikant', -$15 #Mind"
     ]
   },
   zh: {
@@ -111,15 +124,15 @@ export const translations = {
     // Bento Cards
     cardBattery: "生命电量",
     cardEntry: "AI 录入",
-    cardEntryDesc: "“买了一台 MacBook Pro，2400美元”",
+    cardEntryDesc: "自然语言，自动归档",
     cardArch: "系统架构",
-    cardArchDesc: "微内核 + 插件化",
+    cardArchDesc: "Drift DB + 插件系统",
     cardMap: "路线图",
-    cardMapDesc: "未来规划",
+    cardMapDesc: "未来开发计划",
     cardPhil: "核心理念",
     cardPhilDesc: "人生操作系统",
-    cardBody: "身体项目",
-    cardBodyDesc: "身体是最大的资产",
+    cardBody: "人生雷达",
+    cardBodyDesc: "五维状态监控",
 
     // Philosophy Section
     philTitle: "理念与设计",
@@ -163,11 +176,11 @@ export const translations = {
 
     // Modals
     archLayer1: "第一层：Drift 数据库",
-    archLayer1Desc: "本地优先的 SQL 结构，确保数据完全属于你。基于 SQLite 与 JSON 扩展构建。",
+    archLayer1Desc: "本地优先的 SQL 结构，确保数据完全属于你。基于 SQLite 构建，支持实体(Entity)与事件(Event)分离设计。",
     archLayer2: "第二层：插件系统",
-    archLayer2Desc: "神经系统。连接银行 API、OCR 扫描仪和手动输入流的标准化管道。",
+    archLayer2Desc: "神经系统。连接银行 API、OCR 扫描仪和手动输入流的标准化管道。智能映射规则可自动将输入归类为项目与维度。",
     archLayer3: "第三层：负一屏交互",
-    archLayer3Desc: "交互界面。一个可拖拽的仪表盘（Bento），作为你人生资产的操作系统。",
+    archLayer3Desc: "交互界面。一个可拖拽的仪表盘（Bento），聚合生命电量、现金流跑马灯等组件，作为你人生资产的操作系统。",
 
     roadmapTitle: "产品路线图",
     roadmapCol1: "待办",
@@ -179,7 +192,7 @@ export const translations = {
     roadmapItem4: "负一屏交互优化",
     roadmapItem5: "云端备份 (可选)",
     roadmapItem6: "新主题引擎",
-    roadmapItem7: "核心数据库",
+    roadmapItem7: "核心数据库 (Drift)",
     roadmapItem8: "基础资产录入",
     roadmapItem9: "多语言支持",
 
@@ -194,6 +207,19 @@ export const translations = {
       "数据所有权是自由的第一步。",
       "为长远优化，而非即时满足。",
       "‘负一屏’设计消除了记录的阻力。"
+    ],
+
+    aiExamples: [
+      "2024-05-20, 滴滴出行, -35.5元",
+      "买了一台 MacBook Pro M3, 14999元",
+      "云南旅游机票, 2000元 #Soul",
+      "星巴克拿铁, -32元",
+      "工资收入, +25000元",
+      "健身房年卡, -3000元 #Body",
+      "出售闲置 Switch, +1200元",
+      "订阅 ChatGPT Plus, -20美元",
+      "给妈妈发红包, -1000元 #Social",
+      "购买《纳瓦尔宝典》, -45元 #Mind"
     ]
   }
 };

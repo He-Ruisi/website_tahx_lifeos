@@ -5,6 +5,7 @@ import PhilosophyModal from './components/Philosophy';
 import BetaCenter from './components/BetaCenter';
 import BetaModal from './components/BetaModal';
 import AIChatBot from './components/AIChatBot';
+import FloatingOrb from './components/FloatingOrb';
 import { AppProvider } from './context';
 
 const Footer: React.FC = () => (
@@ -30,6 +31,7 @@ const AppContent: React.FC = () => {
       <PhilosophyModal />
       <BetaModal />
       <AIChatBot />
+      <FloatingOrb />
     </div>
   );
 }
