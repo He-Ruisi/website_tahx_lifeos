@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tahx (禾兑) | Manage Assets, Not Just Expenses</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Babel Standalone: 用于在浏览器中实时编译 TSX (适合零构建部署) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -21,36 +28,36 @@
                 bg: '#050505',
                 card: '#121212',
                 border: '#2A2A2A',
-                accent: '#00F0FF', // Cyber Cyan
-                secondary: '#2563EB', // Klein Blue-ish
+                accent: '#00F0FF',
+                secondary: '#2563EB',
                 text: '#E5E5E5',
                 muted: '#737373'
               },
               panyuliang: {
-                bg: '#2E243C', // Deep Indigo/Violet
-                card: '#453655', // Muted Plum
+                bg: '#2E243C',
+                card: '#453655',
                 border: '#5E4B70', 
-                accent: '#D4A373', // Golden Ochre
-                secondary: '#C44536', // Carmine Red
-                text: '#F2E9E4', // Canvas White
+                accent: '#D4A373',
+                secondary: '#C44536',
+                text: '#F2E9E4',
                 muted: '#A899B5'
               },
               pancanvas: {
-                bg: '#F2E9E4', // Rice Paper / Canvas
-                card: '#FFFFFF', // Clean White
+                bg: '#F2E9E4',
+                card: '#FFFFFF',
                 border: '#E0D5C9', 
-                accent: '#C8553D', // Brick Red (Rouge)
-                secondary: '#588157', // Sage Green
-                text: '#222222', // Ink Black
+                accent: '#C8553D',
+                secondary: '#588157',
+                text: '#222222',
                 muted: '#888888'
               },
               panjade: {
-                bg: '#D8E2DC', // Mist / Pale Celadon
-                card: '#F3F6F4', // Soft White
+                bg: '#D8E2DC',
+                card: '#F3F6F4',
                 border: '#B8C6BF',
-                accent: '#E29578', // Terra Cotta
-                secondary: '#006D77', // Deep Teal
-                text: '#264653', // Dark Slate
+                accent: '#E29578',
+                secondary: '#006D77',
+                text: '#264653',
                 muted: '#6C757D'
               }
             },
@@ -86,18 +93,22 @@
           scrollbar-width: none;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
-    "framer-motion": "https://esm.sh/framer-motion@^12.23.26"
-  }
-}
-</script>
-</head>
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+        "framer-motion": "https://esm.sh/framer-motion@^12.23.26"
+      }
+    }
+    </script>
+
+    <!-- 入口引用：必须使用 type="text/babel" 并指定 data-type="module" 以配合 Babel 实时编译 -->
+    <script type="text/babel" data-type="module" src="index.tsx"></script>
+  </head>
   <body>
     <div id="root"></div>
   </body>

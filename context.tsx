@@ -13,6 +13,8 @@ export const translations = {
     
     // Bento Cards
     cardBattery: "Life Battery",
+    cardLegal: "Privacy & Terms",
+    cardLegalDesc: "Local-First Policy",
     cardEntry: "AI Entry",
     cardEntryDesc: "Auto-parse natural language",
     cardArch: "Architecture",
@@ -87,6 +89,20 @@ export const translations = {
     roadmapItem8: "Basic Asset Entry",
     roadmapItem9: "Multi-language Support",
 
+    // Legal & Privacy
+    legalTitle: "Privacy Policy & Terms",
+    legalSubtitle: "Transparency is our core value.",
+    legalIntro: "Tahx is designed with a 'Local-First' architecture. We believe your financial data and life assets are private property. Below are the terms required for App Store and Google Play compliance.",
+    legalSection1Title: "1. Data Storage & Ownership",
+    legalSection1Desc: "All asset data, financial records, and personal entries are stored locally on your device using an encrypted SQLite database. Tahx does not upload your personal data to our servers. You have 100% ownership and control over your data.",
+    legalSection2Title: "2. AI & Third-Party APIs",
+    legalSection2Desc: "To provide features such as 'Natural Language Entry', 'Receipt OCR', and 'Voice Input', Tahx utilizes third-party APIs (e.g., Google Gemini, Speech-to-Text). Data sent to these APIs is stateless: it is used solely for processing the immediate request and is not stored by the AI provider to train their models. We act as a privacy middleware.",
+    legalSection3Title: "3. Permissions",
+    legalSection3Desc: "• Camera: Required only for OCR scanning of receipts.\n• Microphone: Required only for voice asset entry.\n• Location: Optional, for geotagging asset acquisition locations (stored locally).",
+    legalSection4Title: "4. Cloud Backup (Optional)",
+    legalSection4Desc: "If you choose to enable Cloud Backup (e.g., iCloud or Google Drive), your data will be encrypted and stored in your personal cloud account. Tahx developers do not have access to these backups.",
+    legalContact: "For privacy inquiries: privacy@tahx.app",
+
     quotes: [
       "Spending is instant, but assets are forever.",
       "Track the survival cost, not just the coffee cost.",
@@ -123,6 +139,8 @@ export const translations = {
     
     // Bento Cards
     cardBattery: "生命电量",
+    cardLegal: "法律与隐私",
+    cardLegalDesc: "本地优先隐私协议",
     cardEntry: "AI 录入",
     cardEntryDesc: "自然语言，自动归档",
     cardArch: "系统架构",
@@ -195,6 +213,20 @@ export const translations = {
     roadmapItem7: "核心数据库 (Drift)",
     roadmapItem8: "基础资产录入",
     roadmapItem9: "多语言支持",
+
+    // Legal & Privacy
+    legalTitle: "隐私条款与用户协议",
+    legalSubtitle: "透明是我们最核心的资产。",
+    legalIntro: "禾兑 (Tahx) 采用“本地优先 (Local-First)” 架构设计。我们深知财务数据与生活资产属于您的私有财产。以下是符合 Apple App Store 及 Google Play 上架要求的隐私声明。",
+    legalSection1Title: "1. 数据存储与所有权",
+    legalSection1Desc: "所有的资产数据、财务记录和个人条目均使用加密的 SQLite 数据库存储在您的本地设备上。禾兑不会将您的个人数据上传至我们的服务器。您拥有数据的 100% 所有权和控制权。",
+    legalSection2Title: "2. AI 与第三方 API 使用",
+    legalSection2Desc: "为了提供“自然语言录入”、“小票 OCR 识别”和“语音输入”等功能，禾兑会调用第三方 API（如 Google Gemini, 语音转文字服务）。发送至这些 API 的数据是无状态的：它们仅用于处理当次请求，AI 提供商不会存储这些数据用于训练模型。我们仅作为保护隐私的中间件。",
+    legalSection3Title: "3. 权限调用",
+    legalSection3Desc: "• 相机：仅用于扫描小票或拍摄实体资产（OCR）。\n• 麦克风：仅用于语音快速记账。\n• 地点：可选，用于记录资产获取地点（仅存储在本地）。",
+    legalSection4Title: "4. 云端备份（可选）",
+    legalSection4Desc: "如果您选择开启云备份（如 iCloud 或 Google Drive），您的数据将被加密并存储在您的个人云账户中。禾兑的开发团队无法访问这些备份文件。",
+    legalContact: "隐私相关咨询: privacy@tahx.app",
 
     quotes: [
       "消费是瞬间的，但资产是永恒的。",

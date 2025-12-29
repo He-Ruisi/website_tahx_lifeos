@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useDragControls } from 'framer-motion';
-import { Battery, Smartphone, Brain, Move, Quote, Layers, Kanban, X, ChevronRight, ChevronLeft, Grip, BookOpen, Heart, Activity, TrendingUp, RefreshCcw, Bell, ShoppingCart, Clock, PieChart, Map, Plane, Ticket, Coffee, Mic, Plus, ArrowDown, Edit2, Save } from 'lucide-react';
+import { Battery, Smartphone, Brain, Move, Quote, Layers, Kanban, X, ChevronRight, ChevronLeft, Grip, BookOpen, Heart, Activity, TrendingUp, RefreshCcw, Bell, ShoppingCart, Clock, PieChart, Map, Plane, Ticket, Coffee, Mic, Plus, ArrowDown, Edit2, Save, Shield, Lock } from 'lucide-react';
 import { useApp, useT } from '../context';
+import PrivacyModal from './PrivacyModal';
 
 // --- Types ---
 
@@ -56,9 +57,11 @@ const SimpleRadarChart: React.FC<{ data: number[], labels: string[], theme: stri
     const isLight = theme === 'pancanvas' || theme === 'panjade';
     const stroke = isLight ? '#000' : '#fff';
     const fill = isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)';
+    
+    // SVG sizing logic to be responsive
     const size = 100;
     const center = size / 2;
-    const radius = size * 0.4;
+    const radius = size * 0.35; // Slightly reduced to fit labels better on mobile
     
     const points = data.map((val, i) => {
         const angle = (Math.PI * 2 * i) / data.length - Math.PI / 2;
@@ -77,8 +80,8 @@ const SimpleRadarChart: React.FC<{ data: number[], labels: string[], theme: stri
     });
 
     return (
-        <div className="relative w-full h-full flex items-center justify-center">
-            <svg viewBox={`0 0 ${size} ${size}`} className="w-full h-full p-2">
+        <div className="relative w-full h-full flex items-center justify-center min-h-[140px]">
+            <svg viewBox={`0 0 ${size} ${size}`} className="w-full h-full p-2 overflow-visible">
                 <polygon points={points} fill={fill} stroke={stroke} strokeWidth="1.5" />
                 {axes.map((axis, i) => (
                      <line key={i} x1={axis.x1} y1={axis.y1} x2={axis.x2} y2={axis.y2} stroke={stroke} strokeOpacity="0.1" strokeWidth="0.5" />
@@ -88,14 +91,15 @@ const SimpleRadarChart: React.FC<{ data: number[], labels: string[], theme: stri
             </svg>
              {labels.map((label, i) => {
                  const style: React.CSSProperties = {};
-                 if (i === 0) { style.top = '5%'; style.left = '50%'; style.transform = 'translateX(-50%)'; }
-                 else if (i === 1) { style.top = '30%'; style.right = '5%'; }
-                 else if (i === 2) { style.bottom = '20%'; style.right = '10%'; }
-                 else if (i === 3) { style.bottom = '20%'; style.left = '10%'; }
-                 else if (i === 4) { style.top = '30%'; style.left = '5%'; }
+                 // Adjusted positioning for responsiveness
+                 if (i === 0) { style.top = '2%'; style.left = '50%'; style.transform = 'translateX(-50%)'; }
+                 else if (i === 1) { style.top = '25%'; style.right = '0%'; }
+                 else if (i === 2) { style.bottom = '15%'; style.right = '5%'; }
+                 else if (i === 3) { style.bottom = '15%'; style.left = '5%'; }
+                 else if (i === 4) { style.top = '25%'; style.left = '0%'; }
                  
                  return (
-                     <span key={i} className="absolute text-[8px] font-mono opacity-60 uppercase" style={style}>
+                     <span key={i} className="absolute text-[8px] font-mono opacity-60 uppercase whitespace-nowrap" style={style}>
                          {label}
                      </span>
                  )
@@ -327,7 +331,7 @@ const LifeRadarWidget: React.FC<{ onClick: () => void }> = ({ onClick }) => {
                     <span className={`text-xs font-bold ${palette.text}`}>{t.cardBody}</span>
                 </div>
             </div>
-            <div className="flex-1 pointer-events-none">
+            <div className="flex-1 pointer-events-none min-h-0">
                 <SimpleRadarChart data={data} labels={labels} theme={theme} />
             </div>
         </div>
@@ -354,20 +358,21 @@ const NegativeOneScreenList: React.FC = () => {
 
     return (
         <div className="w-full h-full overflow-y-auto overflow-x-hidden p-4 scrollbar-hide relative">
-            <div className="grid grid-cols-4 auto-rows-[80px] gap-2 pb-8">
+            {/* Grid Changed: grid-cols-2 for mobile (small screens), grid-cols-4 for md+ */}
+            <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[80px] gap-2 pb-8">
                 
                 {/* 1. Life Fuel (Liquid Wave) */}
-                <SubWidget title="Life Fuel" size="col-span-2 row-span-2" icon={<Battery />}>
+                <SubWidget title="Life Fuel" size="col-span-1 md:col-span-2 row-span-2" icon={<Battery />}>
                     <LifeFuelWidget theme={theme} />
                 </SubWidget>
 
                 {/* 2. Budget Horizon */}
-                <SubWidget title="Budget Horizon" size="col-span-2 row-span-1" icon={<TrendingUp />}>
+                <SubWidget title="Budget Horizon" size="col-span-1 md:col-span-2 row-span-1" icon={<TrendingUp />}>
                     <BudgetHorizon theme={theme} />
                 </SubWidget>
 
                 {/* 3. Major Expense Ticker */}
-                <SubWidget title="Pain Points" size="col-span-2 row-span-1" icon={<ArrowDown />}>
+                <SubWidget title="Pain Points" size="col-span-1 md:col-span-2 row-span-1" icon={<ArrowDown />}>
                     <div className="flex items-center h-full overflow-hidden">
                         <motion.div 
                             animate={{ x: ["100%", "-100%"] }} 
@@ -384,17 +389,17 @@ const NegativeOneScreenList: React.FC = () => {
                 </SubWidget>
 
                 {/* 4. Asset Bubble Universe */}
-                <SubWidget title="Asset Universe" size="col-span-2 row-span-2" icon={<PieChart />}>
+                <SubWidget title="Asset Universe" size="col-span-1 md:col-span-2 row-span-2" icon={<PieChart />}>
                     <AssetBubbleUniverse theme={theme} />
                 </SubWidget>
 
                 {/* 5. Habit Heatmap */}
-                <SubWidget title="Habit Tracker" size="col-span-2 row-span-2" icon={<Brain />}>
+                <SubWidget title="Habit Tracker" size="col-span-1 md:col-span-2 row-span-2" icon={<Brain />}>
                     <HabitHeatmap theme={theme} />
                 </SubWidget>
 
                 {/* 6. Ticket Wall */}
-                <SubWidget title="Memory Lane" size="col-span-4 row-span-2" icon={<Ticket />}>
+                <SubWidget title="Memory Lane" size="col-span-2 md:col-span-4 row-span-2" icon={<Ticket />}>
                     <TicketWall theme={theme} />
                 </SubWidget>
 
@@ -800,9 +805,9 @@ const RoadmapModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 const HeroBento: React.FC = () => {
   const { theme, language, setPhilosophyOpen } = useApp();
   const t = useT();
-  const [activeModal, setActiveModal] = useState<'arch' | 'roadmap' | 'dimension' | null>(null);
+  const [activeModal, setActiveModal] = useState<'arch' | 'roadmap' | 'dimension' | 'privacy' | null>(null);
 
-  // Widget Configuration State - Removed 'entry' widget
+  // Widget Configuration State - Replaced 'battery' with 'legal'
   const [widgets, setWidgets] = useState<WidgetConfig[]>([
     { id: 'main', colSpan: 'md:col-span-2', rowSpan: 'md:row-span-2' },
     { id: 'entry', colSpan: 'md:col-span-1', rowSpan: 'md:row-span-1' },
@@ -811,7 +816,7 @@ const HeroBento: React.FC = () => {
     { id: 'arch', colSpan: 'md:col-span-1', rowSpan: 'md:row-span-1' },
     { id: 'roadmap', colSpan: 'md:col-span-1', rowSpan: 'md:row-span-1' },
     { id: 'philosophy', colSpan: 'md:col-span-1', rowSpan: 'md:row-span-1' },
-    { id: 'battery', colSpan: 'md:col-span-1', rowSpan: 'md:row-span-1' },
+    { id: 'legal', colSpan: 'md:col-span-1', rowSpan: 'md:row-span-1' }, // Changed from battery to legal
   ]);
 
   const handleMove = (dragId: string, targetId: string) => {
@@ -935,13 +940,22 @@ const HeroBento: React.FC = () => {
                      </div>
                 </BentoItem>
             );
-        case 'battery':
-             // Simple Clock/Date Widget
+        case 'legal':
+             // NEW: Legal & Privacy Widget
              return (
-                 <BentoItem key={widget.id} widget={widget} index={index} onMove={handleMove} className={`flex flex-col justify-center ${getCardStyle()} hover:bg-black/5`} theme={theme}>
-                    <div className="p-6 text-center pointer-events-none">
-                        <span className={`text-4xl font-bold font-mono ${s.title}`}>{new Date().getDate()}</span>
-                        <span className={`text-xs block uppercase tracking-widest ${s.muted}`}>{new Date().toLocaleString('default', { month: 'short' })}</span>
+                 <BentoItem 
+                    key={widget.id} 
+                    widget={widget} 
+                    index={index} 
+                    onMove={handleMove} 
+                    onClick={() => setActiveModal('privacy')}
+                    className={`flex flex-col justify-center ${getCardStyle(true)} hover:bg-black/5`} 
+                    theme={theme}
+                 >
+                    <div className="p-6 pointer-events-none">
+                        <Shield className={`${palette.icon} mb-3`} size={24} />
+                        <h3 className={`font-bold ${s.title}`}>{useT().cardLegal}</h3>
+                        <p className={`text-xs ${s.muted} mt-1`}>{useT().cardLegalDesc}</p>
                     </div>
                 </BentoItem>
              );
@@ -1001,6 +1015,7 @@ const HeroBento: React.FC = () => {
         {activeModal === 'arch' && <ArchitectureModal onClose={() => setActiveModal(null)} />}
         {activeModal === 'roadmap' && <RoadmapModal onClose={() => setActiveModal(null)} />}
         {activeModal === 'dimension' && <DimensionModal onClose={() => setActiveModal(null)} />}
+        {activeModal === 'privacy' && <PrivacyModal isOpen={true} onClose={() => setActiveModal(null)} />}
       </AnimatePresence>
 
     </section>
