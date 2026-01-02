@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { AppState, Language, AppTheme } from './types';
 
@@ -45,12 +46,6 @@ export const translations = {
     betaTitle: "Join the Beta Lab",
     betaDesc: "Tahx is currently in closed beta. We are looking for early adopters who want to treat their life like a high-growth startup.",
     betaBtnDown: "Download .APK",
-    betaBtnSource: "View Source",
-    betaLogFile: "latest_build_log.txt",
-    betaLog1: "git clone https://github.com/tahx-org/core.git",
-    betaLog2: "Cloning into 'tahx-core'...",
-    betaLog3: "WARNING: Experimental features enabled [Survival_Mode]",
-    betaLog4: "Compiling assets... Done (0.42s)",
 
     // Beta Modal
     betaModalTitle: "Join the Inner Circle",
@@ -171,12 +166,6 @@ export const translations = {
     betaTitle: "加入内测实验室",
     betaDesc: "禾兑目前处于封闭测试阶段。我们正在寻找愿意将生活视为高增长初创公司管理的早期采用者。",
     betaBtnDown: "下载 .APK",
-    betaBtnSource: "查看源码",
-    betaLogFile: "最新构建日志.txt",
-    betaLog1: "git clone https://github.com/tahx-org/core.git",
-    betaLog2: "正在克隆到 'tahx-core'...",
-    betaLog3: "警告: 实验性功能已启用 [生存模式]",
-    betaLog4: "编译资源中... 完成 (0.42s)",
 
     // Beta Modal
     betaModalTitle: "加入内测社区",
