@@ -1,7 +1,8 @@
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send } from 'lucide-react';
-import { useApp, useT } from '../context';
+import { useApp, useT } from '../context.tsx';
 
 const AIChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

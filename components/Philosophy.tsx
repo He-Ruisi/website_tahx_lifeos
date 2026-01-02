@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AssetStage } from '../types';
+import { AssetStage } from '../types.ts';
 import { Circle, ArrowRight, XCircle, CheckCircle, Package, Layers, MousePointer2, X } from 'lucide-react';
-import { useApp, useT } from '../context';
+import { useApp, useT } from '../context.tsx';
 
 const Stage: React.FC<{ stage: AssetStage; icon: React.ReactNode; index: number; theme: string }> = ({ stage, icon, index, theme }) => {
   const isLight = theme === 'pancanvas' || theme === 'panjade';
@@ -147,7 +148,7 @@ const PhilosophyModal: React.FC = () => {
                         />
                     </div>
 
-                    {/* Deep Dive Content (Based on prompt history) */}
+                    {/* Deep Dive Content */}
                     <div className="mb-16 space-y-8">
                         <div>
                              <h3 className={`text-2xl font-bold mb-4 ${s.text} ${theme === 'cyber' ? 'font-mono' : 'font-serif'}`}>{t.philDeepTitle}</h3>

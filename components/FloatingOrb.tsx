@@ -1,7 +1,8 @@
+
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useSpring } from 'framer-motion';
 import { Mic, Send, X, Sparkles } from 'lucide-react';
-import { useApp, useT } from '../context';
+import { useApp, useT } from '../context.tsx';
 
 const FloatingOrb: React.FC = () => {
   const { theme } = useApp();

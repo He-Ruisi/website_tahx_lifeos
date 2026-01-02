@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Shield, Lock, Server, CloudOff } from 'lucide-react';
-import { useApp, useT } from '../context';
+import { useApp, useT } from '../context.tsx';
 
 interface PrivacyModalProps {
     isOpen: boolean;

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Download } from 'lucide-react';
-import { useApp, useT } from '../context';
+import { useApp, useT } from '../context.tsx';
 
 const BetaCenter: React.FC = () => {
   const { theme } = useApp();
@@ -39,7 +39,6 @@ const BetaCenter: React.FC = () => {
         </p>
 
         <div className="flex flex-col items-center justify-center gap-4">
-            {/* 将按钮改为 <a> 标签，href 指向您托管的 APK 路径 */}
             <a 
               href="/tahx-latest.apk" 
               download 

@@ -1,7 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Palette, Globe } from 'lucide-react';
-import { useApp, useT } from '../context';
-import { AppTheme } from '../types';
+import { useApp, useT } from '../context.tsx';
+import { AppTheme } from '../types.ts';
 
 const NavBar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
