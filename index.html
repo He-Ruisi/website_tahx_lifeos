@@ -9,7 +9,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Babel Standalone: 用于在浏览器中实时编译 TSX (适合零构建部署) -->
+    <!-- Babel Standalone -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -61,38 +61,22 @@
                 text: '#264653',
                 muted: '#6C757D'
               }
-            },
-            animation: {
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'float': 'float 6s ease-in-out infinite',
-            },
-            keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-10px)' },
-              }
             }
           }
         }
       }
     </script>
+    
     <style>
-      body {
-        transition: background-color 0.5s ease;
-      }
+      body { transition: background-color 0.5s ease; }
       .glass-panel {
         background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(255, 255, 255, 0.08);
       }
-      .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-      }
-      .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-      }
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
     
     <script type="importmap">
@@ -107,8 +91,8 @@
     }
     </script>
 
-    <!-- 入口引用：确保 src 是相对路径 -->
-    <script type="text/babel" data-type="module" src="./index.tsx"></script>
+    <!-- 修复点：改为引用 .jsx -->
+    <script type="text/babel" data-type="module" src="./index.jsx"></script>
   </head>
   <body>
     <div id="root"></div>
