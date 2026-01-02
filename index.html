@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="dark">
   <head>
@@ -106,8 +107,8 @@
     }
     </script>
 
-    <!-- 入口引用：必须使用 type="text/babel" 并指定 data-type="module" 以配合 Babel 实时编译 -->
-    <script type="text/babel" data-type="module" src="index.tsx"></script>
+    <!-- 入口引用：确保 src 是相对路径 -->
+    <script type="text/babel" data-type="module" src="./index.tsx"></script>
   </head>
   <body>
     <div id="root"></div>
