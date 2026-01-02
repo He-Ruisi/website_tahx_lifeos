@@ -1,12 +1,13 @@
+
 import React from 'react';
-import NavBar from './components/NavBar';
-import HeroBento from './components/HeroBento';
-import PhilosophyModal from './components/Philosophy';
-import BetaCenter from './components/BetaCenter';
-import BetaModal from './components/BetaModal';
-import AIChatBot from './components/AIChatBot';
-import FloatingOrb from './components/FloatingOrb';
-import { AppProvider } from './context';
+import NavBar from './components/NavBar.tsx';
+import HeroBento from './components/HeroBento.tsx';
+import PhilosophyModal from './components/Philosophy.tsx';
+import BetaCenter from './components/BetaCenter.tsx';
+import BetaModal from './components/BetaModal.tsx';
+import AIChatBot from './components/AIChatBot.tsx';
+import FloatingOrb from './components/FloatingOrb.tsx';
+import { AppProvider } from './context.tsx';
 
 const Footer: React.FC = () => (
   <footer className="py-12 bg-black border-t border-white/10 text-center text-gray-500 text-sm">

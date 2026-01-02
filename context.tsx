@@ -1,6 +1,6 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { AppState, Language, AppTheme } from './types';
+import { AppState, Language, AppTheme } from './types.ts';
 
 // Translation Dictionary
 export const translations = {
@@ -12,7 +12,6 @@ export const translations = {
     navRoadmap: "Roadmap",
     navBeta: "Join Beta",
     
-    // Bento Cards
     cardBattery: "Life Battery",
     cardLegal: "Privacy & Terms",
     cardLegalDesc: "Local-First Policy",
@@ -27,7 +26,6 @@ export const translations = {
     cardBody: "Life Radar",
     cardBodyDesc: "5-Dimension Status",
     
-    // Philosophy Section
     philTitle: "Philosophy & Design",
     philSubtitle: "From Expense Tracker to Life OS",
     philConceptTitle: "Core Concept",
@@ -42,12 +40,10 @@ export const translations = {
     philDeepTitle: "Core Philosophy: Life OS",
     philDeepBody: "Tahx is not just an expense tracker. It is a <strong>Life Operating System (Life OS)</strong>. Traditional apps focus on the \"transaction moment\" (money leaving the wallet). Tahx focuses on \"value persistence\"—how items serve your life and the daily cost of existence.<br/><br/>By tracking the <strong>Survival Cost</strong> (the daily cost to maintain your existence), you gain a new perspective on freedom. Life is a company, and you are the CEO. Your inventory defines your capabilities.",
     
-    // Beta Center
     betaTitle: "Join the Beta Lab",
     betaDesc: "Tahx is currently in closed beta. We are looking for early adopters who want to treat their life like a high-growth startup.",
     betaBtnDown: "Download .APK",
 
-    // Beta Modal
     betaModalTitle: "Join the Inner Circle",
     betaModalSubtitle: "Scan to connect with the community",
     wechatLabel: "WeChat Group",
@@ -55,13 +51,11 @@ export const translations = {
     discordLabel: "Discord Community",
     discordBtn: "Join Server",
     
-    // AI Chat
     aiTitle: "Tahx AI Assistant",
     aiGreeting: "Ready to treat your life like a company?",
     aiYes: "Yes, take me in.",
     aiBtn: "Yes, enter protocol",
     
-    // Modals - Architecture
     archLayer1: "Layer 1: Drift Database",
     archLayer1Desc: "Local-first SQL structure ensuring your data belongs to you. Built on SQLite with JSON extensions. Supports Entity/Event separation.",
     archLayer2: "Layer 2: Plugin System",
@@ -69,7 +63,6 @@ export const translations = {
     archLayer3: "Layer 3: Negative One Screen",
     archLayer3Desc: "The interface. A drag-and-drop dashboard (Bento) that acts as the operating system for your life's assets.",
     
-    // Modals - Roadmap
     roadmapTitle: "Product Roadmap",
     roadmapCol1: "To Do",
     roadmapCol2: "In Progress",
@@ -84,7 +77,6 @@ export const translations = {
     roadmapItem8: "Basic Asset Entry",
     roadmapItem9: "Multi-language Support",
 
-    // Legal & Privacy
     legalTitle: "Privacy Policy & Terms",
     legalSubtitle: "Transparency is our core value.",
     legalIntro: "Tahx is designed with a 'Local-First' architecture. We believe your financial data and life assets are private property. Below are the terms required for App Store and Google Play compliance.",
@@ -132,7 +124,6 @@ export const translations = {
     navRoadmap: "路线图",
     navBeta: "加入内测",
     
-    // Bento Cards
     cardBattery: "生命电量",
     cardLegal: "法律与隐私",
     cardLegalDesc: "本地优先隐私协议",
@@ -147,7 +138,6 @@ export const translations = {
     cardBody: "人生雷达",
     cardBodyDesc: "五维状态监控",
 
-    // Philosophy Section
     philTitle: "理念与设计",
     philSubtitle: "从被动记录到主动管理的人生操作系统",
     philConceptTitle: "核心理念",
@@ -162,12 +152,10 @@ export const translations = {
     philDeepTitle: "核心理念：人生操作系统 (Life OS)",
     philDeepBody: "禾兑不仅仅是一个记账软件，它是一个<strong>人生操作系统 (Life OS)</strong>。传统应用关注“交易时刻”（钱离开钱包的那一刻），而禾兑关注“价值存续”——物品如何服务于你的生活以及存在的每日成本。<br/><br/>通过追踪<strong>生存成本</strong>（维持生存的每日开销），你将获得关于自由的全新视角。人生即公司，你就是 CEO。你的库存定义了你的能力。",
 
-    // Beta Center
     betaTitle: "加入内测实验室",
     betaDesc: "禾兑目前处于封闭测试阶段。我们正在寻找愿意将生活视为高增长初创公司管理的早期采用者。",
     betaBtnDown: "下载 .APK",
 
-    // Beta Modal
     betaModalTitle: "加入内测社区",
     betaModalSubtitle: "扫描二维码或加入服务器",
     wechatLabel: "微信交流群",
@@ -175,13 +163,11 @@ export const translations = {
     discordLabel: "Discord 社区",
     discordBtn: "加入服务器",
 
-    // AI Chat
     aiTitle: "禾兑 AI 助手",
     aiGreeting: "准备好把你的生活当做公司来经营了吗？",
     aiYes: "是的，带我进入。",
     aiBtn: "是的，启动协议",
 
-    // Modals
     archLayer1: "第一层：Drift 数据库",
     archLayer1Desc: "本地优先的 SQL 结构，确保数据完全属于你。基于 SQLite 构建，支持实体(Entity)与事件(Event)分离设计。",
     archLayer2: "第二层：插件系统",
@@ -203,7 +189,6 @@ export const translations = {
     roadmapItem8: "基础资产录入",
     roadmapItem9: "多语言支持",
 
-    // Legal & Privacy
     legalTitle: "隐私条款与用户协议",
     legalSubtitle: "透明是我们最核心的资产。",
     legalIntro: "禾兑 (Tahx) 采用“本地优先 (Local-First)” 架构设计。我们深知财务数据与生活资产属于您的私有财产。以下是符合 Apple App Store 及 Google Play 上架要求的隐私声明。",
@@ -253,7 +238,6 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   const [isPhilosophyOpen, setPhilosophyOpen] = useState(false);
   const [isBetaOpen, setBetaOpen] = useState(false);
 
-  // Apply theme to body background immediately for smoothness
   React.useEffect(() => {
     switch (theme) {
       case 'cyber':
